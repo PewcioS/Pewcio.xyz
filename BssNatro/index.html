@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta property="og:description" content="Natro Macro Patterns/Pathes">
+  <meta property="og:description" content="">
   <meta name="theme-color" content="#4111fa">
   <title>Offical Pewcio.xyz Patterns/Paths</title>
   <meta property="og:site_name" content="Pewcio.xyz">
@@ -114,17 +114,17 @@
                   <li><i class="fas fa-check"></i> Explore all patterns meticulously crafted by me with love 💕.</li>
                   <li><i class="fas fa-check"></i> Stay up-to-date with consistently updated patterns to the latest version 😊.</li>                 
                 </ul>
-                <div class="roadmap__item__btn">
-                  <button class="btn btn--primary" onclick="startDownload()">Download Patterns</button>
-              </div>
-              <script>
-                  function startDownload() {
-                      var downloadLink = document.createElement('a');
-                      downloadLink.href = '/Patterns/Patterns.zip';
-                      downloadLink.download = 'Patterns.zip';
-                      downloadLink.click();
-                  }
-              </script>
+                  <div class="roadmap__item__btn">
+                      <button class="btn btn--primary" onclick="startDownload('Patterns/Patterns.zip', 'Patterns.zip')">Download Patterns</button>
+                  </div>
+                  <script>
+                      function startDownload(href, fileName) {
+                          var downloadLink = document.createElement('a');
+                          downloadLink.href = '/' + href;
+                          downloadLink.download = fileName;
+                          downloadLink.click();
+                      }
+                  </script>
               </div>
             </div>
             <div class="swiper-slide">
@@ -150,18 +150,17 @@
                   <li><i class="fas fa-check"></i> Explore the meticulously crafted paths created by me with love 💕.</li>
                   <li><i class="fas fa-check"></i> Stay connected with regularly updated paths to the latest versions 😊.</li>                  
                 </ul>
-                <div class="roadmap__item__btn">
-                  <button class="btn btn--primary" onclick="startDownload()">Download Pathes</button>
-              </div>
-          
-              <script>
-                  function startDownload() {
-                      var downloadLink = document.createElement('b');
-                      downloadLink.href = '/Pathes/Pathes.zip';
-                      downloadLink.download = 'Pathes.zip';
-                      downloadLink.click();
-                  }
-              </script>
+                  <div class="roadmap__item__btn">
+                      <button class="btn btn--primary" onclick="startDownload('Pathes/Pathes.zip', 'Pathes.zip')">Download Pathes</button>
+                  </div>
+                  <script>
+                      function startDownload(href, fileName) {
+                          var downloadLink = document.createElement('a');
+                          downloadLink.href = '/' + href;
+                          downloadLink.download = fileName;
+                          downloadLink.click();
+                      }
+                  </script>
 
               </div>
             </div>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>this is Pewcio.xyz</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&amp;family=Roboto:wght@700&amp;display=swap"
+    rel="stylesheet">
+  <style>
+
+    .roll-button-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+
+    #result {
+      text-align: center;
+      margin-bottom: 20px;
+      color: lightgray;
+      font-size: 38px;
+    }
+
+    .small-content {
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .roll-button {
+      top: 50%;
+      background-color: #0a0a23;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+      box-shadow: 0px 0px 2px 2px rgb(0, 0, 0);
+      transform: translateY(-50%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div id="fullscreen-button">Enter</div>
+
+    <video autoplay="" loop="" id="video" style="display: none;">
+      <source src="media/Bumblebee.mp4" type="video/mp4">
+    </video>
+
+    <script>
+      var video = document.getElementById('video');
+      video.addEventListener('ended', function () {
+        video.currentTime = 0;
+        video.play();
+      });
+    </script>
+
+    <video autoplay="" muted="" loop="" id="video2" style="opacity: 0.6;">
+      <source src="media/grain.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+      <pre class="ascii">
+
+
+      </pre>
+
+      <div id="result"></div>
+
+      <div class="roll-button-container">
+        <button class="roll-button" onclick="rollRarity()">Roll Rarity</button>
+      </div>
+    </div>
+
+    <script>
+      function rollRarity() {
+        var rarities = [
+          { name: "Common", probability: 0.6 },
+          { name: "Rare", probability: 0.3 },
+          { name: "Epic", probability: 0.08 },
+          { name: "Legendary", probability: 0.02 },
+          { name: "Mythic", probability: 0.005 },
+          { name: "Pewcio", probability: 0.001 },
+          { name: "Furekk", probability: 0.0008 },
+          { name: "UwU", probability: 0.00003 },
+          { name: "Nya~~", probability: 0.00000001 }
+        ];
+
+        var roll = Math.random();
+        var cumulativeProbability = 0;
+
+        for (var i = 0; i < rarities.length; i++) {
+          cumulativeProbability += rarities[i].probability;
+          if (roll < cumulativeProbability) {
+            document.getElementById("result").innerHTML = "You rolled: " + rarities[i].name;
+            break;
+          }
+        }
+      }
+    </script>
+
+    <script src="js/main.js"></script>
+
+  </div>
+</body>
+
+</html>
